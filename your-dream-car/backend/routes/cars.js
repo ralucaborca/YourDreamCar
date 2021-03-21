@@ -8,14 +8,13 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-	const username = req.body.username;
+	
 	const brand = req.body.brand;
-	const model = req.body.brand;
+	const model = req.body.model;
 
-	const newCar = newCar({
-		username,
+	const newCar = new Car({
 		brand,
-		model,
+		model
 	});
 
 	newCar.save()
