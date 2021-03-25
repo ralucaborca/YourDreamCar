@@ -22,4 +22,30 @@ router.route('/add').post((req, res) => {
 	.catch(err => res.status(400).json('Error' + err));
 });
 
+router.route('/:id').get((req, res) => {
+  	Car.findById(req.params.id)
+    		.then(cars => res.json(cars))
+    		.catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/:id').delete((req, res) => {
+ 	 Car.findByIdAndDelete(req.params.id)
+    		.then(() => res.json('Car deleted.'))
+    		.catch(err => res.status(400).json('Error: ' + err));
+});
+
+
+router.route('/update/:id').post((req, res) => {
+  	Car.findById(req.params.id)
+    		.then(cars => {
+     		cars.brand = req.body.brand;
+      		cars.model = req.body.model;
+
+      		cars.save()
+       			.then(() => res.json('Car updated!'))
+        		.catch(err => res.status(400).json('Error: ' + err));
+    })
+    	.catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;
