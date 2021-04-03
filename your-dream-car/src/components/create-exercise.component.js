@@ -1,54 +1,59 @@
 
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class CreateExercises extends Component {
 	 constructor(props) {
-   		 super(props);
-		 this.onChangeBrand =this.onChangeBrand.bind(this);
-   		 this.onChangeModel = this.onChangeModel.bind(this);
-		this.state ={
-			brand:'',
-			model:'',
-			users: []
+   	 super(props);
+	 this.onChangeBrand =this.onChangeBrand.bind(this);
+   	 this.onChangeModel =this.onChangeModel.bind(this);
+	 this.onSubmit = this.onSubmit.bind(this);
+	 this.state = {
+		brand:'',
+		model:'',
+		users: []
 		}
 	}
 	
   	componentDidMount() {
-		this.setState({
-            users: ['test user'],
-            username: 'test user'
-          })	
+	  this.setState({
+		users:['test user'],
+		username: 'test user'
+	})
 	}
 
 	onChangeBrand(e) {
-        this.setState({
-        brand: e.target.value
+          this.setState({
+            brand: e.target.value
         })
         }
 
 	onChangeModel(e) {
-        this.setState({
-        model: e.target.value
+          this.setState({
+            model: e.target.value
         })
         }
+
 	 onSubmit(e) {
-   	 e.preventDefault();
+   	   e.preventDefault();
+	
+   	 const car={
+      	   brand: this.state.brand,
+     	   model: this.state.model
+    	}
+	
+ 	console.log(car);
 
-   	 const car= {
-      brand: this.state.brand,
-      model: this.state.model
-    }
-
-    console.log(car);
-
-    window.location = '/';
-  }
-	 render() {
+    	axios.post('http://localhost:5000/cars/add', car)
+     .then(res => console.log(res.data));
+	 window.location = '/';
+  }        
+	render() {
     return (
-    <div>
-      <h3>Create New Exercise Log</h3>
+     <div>
+      <h3>Create New Car</h3>
       <form onSubmit={this.onSubmit}>
-        <div className="form-group"> 
+	<div className="form-group"> 
           <label>Username: </label>
           <select ref="userInput"
               required
