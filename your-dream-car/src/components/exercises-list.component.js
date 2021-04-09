@@ -48,8 +48,15 @@ export default class ExerciseList extends Component {
 	render(){
 		return(
 		  <div>
+			<center>
+			<p>HELLO, HELLO!!!</p>
 			<img src="/caruri.jpg" alt=""/>
-		  <p>Home page! ieeei</p>
+			</center>
+		  <p> If you are thinking about buying a car but you have a lot to choose from and you cannot decide which is the most suited for you, then you came into the right place.</p>
+		<p>By asking a few questions about yourself and the way you usually use an automobile, we will be able to recommend you the car that will match perfectly with you and your need aka “Your Dream Car”.</p>
+		<p>You can contact us, for more information here:</p>
+		<p>Email: yourdreamcar@gmail.com</p>
+		<p>Phone: 05672871901</p>
 		  </div>
 		)
 	}
