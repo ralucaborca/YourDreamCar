@@ -7,8 +7,9 @@ export default class LogIn extends Component {
 	  super(props);
 	 this.onSubmit = this.onSubmit.bind(this);
 	}
-	onSubmit(e) {
-    e.preventDefault();}
+	
+	 onSubmit(e) {
+   	   e.preventDefault();}
 
 	render(){
 	  return (
