@@ -2,16 +2,24 @@
     include_once 'header.php';
  ?>
 <section class="signup-form">
-	<h2 class='text-light'>Sign Up</h2>
+	<center>
+	<h2 class='text-light'>Sign Up Form</h2>
 	<form action='includes/signup.inc.php' method='post'>
+		<center><img src="images/register.jpg"></center>
+		<h4 class='text-light'>Name</h4>
 		<input type="text" name="name" placeholder="full name">
-		</n>
+		<h4 class='text-light'>Email</h4>
 		<input type="text" name="email" placeholder="email">
+		<h4 class='text-light'>Username</h4>
 		<input type="text" name="username" placeholder="username">
+		<h4 class='text-light'>Password</h4>
 		<input type="password" name="pwd" placeholder="password">
+		<h4 class='text-light'>Password</h4>
 		<input type="password" name="pwdRepeat" placeholder="password again">
+		<h4 class='text-light'></h4>
 		<button type='submit' name='submit'>Sign Up</button>
 	</form>
+	</center>
 
   <?php
   if (isset($_GET["error"])) {
