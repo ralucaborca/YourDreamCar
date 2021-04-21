@@ -118,3 +118,29 @@ function loginUser($conn, $username, $pwd){
     exit();
   }
 }
+
+function emptyInputCar($brand, $model, $year){
+  $result;
+  if (empty($brand) || empty($model) || empty($year)) {
+    $result = true;
+  }
+  else{
+    $result = false;
+  }
+  return $result;
+}
+
+function addCar($brand, $model, $year){
+    $sql = "INSERT INTO Cars (brand, model, year) VALUES (?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+      header("location: ../addCar.php?error=stmtfailed");
+      exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "sss", $brand, $model, $year);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../addCar.php?error=none");
+    exit();
+  }

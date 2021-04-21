@@ -34,7 +34,7 @@
                       </ul>";
                       echo "</ul>
                       <ul class='nav navbar-nav'>
-                          <li class='nav-item' role='presentation'><a class='nav-link active' href='post.php'><b>Add car</b></a></li>
+                          <li class='nav-item' role='presentation'><a class='nav-link active' href='addCar.php'><b>Add car</b></a></li>
                       </ul>";
                       if(($_SESSION["useruid"])){
                         echo "</ul>
