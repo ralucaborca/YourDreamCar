@@ -112,9 +112,35 @@ function loginUser($conn, $username, $pwd){
   }
   else if ($checkPwd === true) {
     session_start();
-    $_SESSION["userid"] = uidExists["usersId"];
-    $_SESSION["useruid"] = uidExists["userUid"];
+    $_SESSION["userid"] = $uidExists["usersId"];
+    $_SESSION["useruid"] = $uidExists["userUid"];
     header("location: ../index.php");
     exit();
   }
 }
+
+function emptyInputCar($brand, $model, $year){
+  $result;
+  if (empty($brand) || empty($model) || empty($year)) {
+    $result = true;
+  }
+  else{
+    $result = false;
+  }
+  return $result;
+}
+
+function addCar($conn, $brand, $model, $year, $cost, $fuelType, $horsepower, $seats){
+    $sql = "INSERT INTO cars (carBrand, carModel, carYear, carCost, carFuelType, carHorsePower, carSeats) VALUES (?, ?, ?, ?, ?, ?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+      header("location: ../addCar.php?error=stmtfailed");
+      exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "sssssss", $brand, $model, $year, $cost, $fuelType, $horsepower, $seats);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../addCar.php?error=none");
+    exit();
+  }
