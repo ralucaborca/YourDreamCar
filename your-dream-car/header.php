@@ -30,18 +30,12 @@
                     if (isset($_SESSION["useruid"])) {
                       echo "</ul>
                       <ul class='nav navbar-nav'>
-                          <li class='nav-item' role='presentation'><a class='nav-link active' href='includes/logout.inc.php'><b>Log out</b></a></li>
+                          <li class='nav-item' role='presentation'><a class='nav-link active' href='addCar.php'><b>Add car</b></a></li>
                       </ul>";
                       echo "</ul>
                       <ul class='nav navbar-nav'>
-                          <li class='nav-item' role='presentation'><a class='nav-link active' href='addCar.php'><b>Add car</b></a></li>
+                          <li class='nav-item' role='presentation'><a class='nav-link active' href='includes/logout.inc.php'><b>Log out</b></a></li>
                       </ul>";
-                      if(($_SESSION["useruid"])){
-                        echo "</ul>
-                        <ul class='nav navbar-nav'>
-                            <li class='nav-item' role='presentation'><a class='nav-link active' href='delete.php'><b>Delete car</b></a></li>
-                        </ul>";
-                      }
                     }
                     else {
                       echo "</ul>

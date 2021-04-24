@@ -4,6 +4,10 @@ if (isset($_POST["submit"])) {
   $brand = $_POST["brand"];
   $model = $_POST["model"];
   $year  = $_POST["year"];
+  $cost  = $_POST["cost"];
+  $fuelType  = $_POST["fuelType"];
+  $horsepower = $_POST["horsepower"];
+  $seats = $_POST["seats"];
   $picture = $_FILES["picture"];
   print_r($picture);
   $pictureName = $picture["name"];
@@ -21,11 +25,10 @@ if (isset($_POST["submit"])) {
   if (in_array($pictureActualExt, $allowed)) {
     if ($pictureError === 0 ) {
       if ($pictureSize < 5000000) {
-        $pictureNameNew = uniqid("",true).".".$pictureActualExt;
+        $pictureNameNew = $brand."-".$model.".".$pictureActualExt;
         print_r($pictureNameNew);
-        $pictureDestination = "/opt/lampp/htdocs/YourDreamCar/your-dream-car/car_pictures/".$pictureNameNew;
+        $pictureDestination = "/opt/lampp/htdocs/YourDreamCar/your-dream-car/images/car_pictures/".$pictureNameNew;
         move_uploaded_file($pictureTmpName, $pictureDestination);
-        header("location: ../index.php?upload=success");
       }else{
         echo "<center><h5 class='text-light'>Your file is too big!</h5></center>";
       }
@@ -44,7 +47,7 @@ if (isset($_POST["submit"])) {
     exit();
   }
 
-  //addCar($brand, $model, $year);
+  addCar($conn, $brand, $model, $year, $cost, $fuelType, $horsepower, $seats);
 }
 else {
   header("location: ../index.php");
