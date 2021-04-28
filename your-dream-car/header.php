@@ -36,12 +36,11 @@
                       <ul class='nav navbar-nav'>
                           <li class='nav-item' role='presentation'><a class='nav-link active' href='post.php'><b>Add car</b></a></li>
                       </ul>";
-                      if(($_SESSION["useruid"])){
-                        echo "</ul>
-                        <ul class='nav navbar-nav'>
-                            <li class='nav-item' role='presentation'><a class='nav-link active' href='delete.php'><b>Delete car</b></a></li>
-                        </ul>";
-                      }
+		      echo "</ul>
+                      <ul class='nav navbar-nav'>
+                          <li class='nav-item' role='presentation'><a class='nav-link active' href='findcar.php'><b>Find YourDreamCar</b></a></li>
+                      </ul>";
+                      
                     }
                     else {
                       echo "</ul>
@@ -52,6 +51,6 @@
                       <ul class='nav navbar-nav'>
                           <li class='nav-item' role='presentation'><a class='nav-link active' href='signup.php'><b>Sign up</b></a></li>
                       </ul>";
-                    }
+		    }
                   ?>
     </nav>
