@@ -144,3 +144,31 @@ function addCar($conn, $brand, $model, $year, $cost, $fuelType, $horsepower, $se
     header("location: ../addCar.php?error=none");
     exit();
   }
+
+function showCars($conn){
+    $sql = "SELECT * FROM cars;";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+      header("location: ../index.php?error=stmtfailed");
+      exit();
+    }
+
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+    if ($resultCheck > 0) {
+      while ($row = mysqli_fetch_assoc($result)) {
+        echo "<center><h1 class='text-light' style='background-color: black'>" . $row['carBrand'] ." ". $row['carModel']. "</h1><center>";
+        echo "<center><h3 class='text-light' style='background-color: black'>Year: ".$row['carYear']."</h3></center>";
+        echo "<center><h3 class='text-light' style='background-color: black'>Cost: ".$row['carCost']."$</h3></center>";
+        echo "<center><h3 class='text-light' style='background-color: black'>Fuel type: ".$row['carFuelType']."</h3></center>";
+        echo "<center><h3 class='text-light' style='background-color: black'>Horsepower: ".$row['carHorsepower']."</h3></center>";
+        echo "<center><h3 class='text-light' style='background-color: black'>Seats: ".$row['carSeats']."</h3></center>";
+        echo "<center><img src='images/car_pictures/".$row['carBrand']."-".$row['carModel'].".jpg' width='500' height='300'"."></center>";
+        
+      }
+    }
+
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    exit();
+  }
