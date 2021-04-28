@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="cars.php">Cars</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="Cars.php">Cars</a></li>
                 </ul>
                   <?php
                     if (isset($_SESSION["useruid"])) {
