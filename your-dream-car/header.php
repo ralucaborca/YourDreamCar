@@ -30,17 +30,13 @@
                     if (isset($_SESSION["useruid"])) {
                       echo "</ul>
                       <ul class='nav navbar-nav'>
-                          <li class='nav-item' role='presentation'><a class='nav-link active' href='includes/logout.inc.php'><b>Log out</b></a></li>
+                          <li class='nav-item' role='presentation'><a class='nav-link active' href='addCar.php'><b>Add car</b></a></li>
                       </ul>";
                       echo "</ul>
                       <ul class='nav navbar-nav'>
-                          <li class='nav-item' role='presentation'><a class='nav-link active' href='post.php'><b>Add car</b></a></li>
+                          <li class='nav-item' role='presentation'><a class='nav-link active' href='includes/logout.inc.php'><b>Log out</b></a></li>
                       </ul>";
-		      echo "</ul>
-                      <ul class='nav navbar-nav'>
-                          <li class='nav-item' role='presentation'><a class='nav-link active' href='findcar.php'><b>Find YourDreamCar</b></a></li>
-                      </ul>";
-                      
+			
                     }
                     else {
                       echo "</ul>
@@ -51,6 +47,6 @@
                       <ul class='nav navbar-nav'>
                           <li class='nav-item' role='presentation'><a class='nav-link active' href='signup.php'><b>Sign up</b></a></li>
                       </ul>";
-		    }
+                    }
                   ?>
     </nav>
