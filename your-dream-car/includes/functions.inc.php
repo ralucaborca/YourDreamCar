@@ -144,6 +144,7 @@ function addCar($conn, $brand, $model, $year, $cost, $fuelType, $horsepower, $se
     header("location: ../addCar.php?error=none");
     exit();
   }
+
 function showCars($conn){
     $sql = "SELECT * FROM cars;";
     $stmt = mysqli_stmt_init($conn);
