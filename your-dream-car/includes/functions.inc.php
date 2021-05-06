@@ -191,7 +191,7 @@ function questionsAnswers($question1,$question2,$question3,$question4,$question5
  { $result++;}
   if($question2 == "2") 
  { $result++;}
-  if($question3 == "10000-150000") 
+  if($question3 == "10000-15000") 
  { $result++;}
   if($question4 == "no") 
  { $result++;}

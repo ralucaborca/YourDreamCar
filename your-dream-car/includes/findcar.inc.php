@@ -10,10 +10,6 @@
   	require_once 'functions.inc.php';
 	
 
-	if(emptyQuestionsAnswers($question1,$question2,$question3,$question4,$question5 !==false){
-	header("location: ../findcar.php?error=emptyinput");
-	exit();
-	}
 	
 
 	questionsAnswers($question1,$question2,$question3,$question4,$question5);

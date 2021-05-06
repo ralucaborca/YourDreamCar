@@ -6,7 +6,7 @@
 	<form action='includes/findcar.inc.php' method='post'>
 	<p class=" text-light" style="background-color: #000000;">1. What's your budget?</p>
 	<p class=" text-light" style="background-color: #000000;"> <input type="radio" name="q1" value="<5000"/><5000</p>
-	<p class=" text-light" style="background-color: #000000;"> <input type="radio" name="q1" value="5000-1000"/> 5000-10000 </p>
+	<p class=" text-light" style="background-color: #000000;"> <input type="radio" name="q1" value="5000-10000"/> 5000-10000 </p>
 	<p class=" text-light" style="background-color: #000000;"> <input type="radio" name="q1" value="10000-20000"/> 10000-20000 </p>
 	<p class=" text-light" style="background-color: #000000;"> <input type="radio" name="q1" value=">20000"/> >20000 </p>
 	<p class=" text-light" style="background-color: #000000;">2. How many kids do you have?</p>
