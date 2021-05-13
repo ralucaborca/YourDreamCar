@@ -9,6 +9,7 @@ if (isset($_POST["submit"])) {
   $horsepower = $_POST["horsepower"];
   $seats = $_POST["seats"];
   $picture = $_FILES["picture"];
+  print_r($picture);
   $pictureName = $picture["name"];
   $pictureTmpName = $picture["tmp_name"];
   $pictureSize = $picture["size"];
@@ -17,12 +18,15 @@ if (isset($_POST["submit"])) {
 
   $pictureExt = explode(".",$pictureName);
   $pictureActualExt = strtolower(end($pictureExt));
+  print_r($pictureActualExt);
+  print_r($pictureName);
   $allowed  = array("jpg", "jpeg", "png");
 
   if (in_array($pictureActualExt, $allowed)) {
     if ($pictureError === 0 ) {
       if ($pictureSize < 5000000) {
         $pictureNameNew = $brand."-".$model.".".$pictureActualExt;
+        print_r($pictureNameNew);
         $pictureDestination = "/opt/lampp/htdocs/YourDreamCar/your-dream-car/images/car_pictures/".$pictureNameNew;
         move_uploaded_file($pictureTmpName, $pictureDestination);
       }else{

@@ -172,3 +172,30 @@ function showCars($conn){
     mysqli_stmt_close($stmt);
     exit();
   }
+
+/*function emptyInputFindCar($question1,$question2,$question3,$question4,$question5){
+  $result;
+  if (empty($question1) || empty($question2) || empty($question3) || empty($question4) || empty($question5) ) {
+    $result = true;
+  }
+  else{
+    $result = false;
+  }
+  return $result;
+}*/
+
+function questionsAnswers($question1,$question2,$question3,$question4,$question5){
+
+  $result=0;
+  if($question1 == "5000-10000") 
+ { $result++;}
+  if($question2 == "2") 
+ { $result++;}
+  if($question3 == "10000-15000") 
+ { $result++;}
+  if($question4 == "no") 
+ { $result++;}
+  if($question5 == "performance") 
+ { $result++;}
+  echo "<p>The answer is:" . $result . "<br />\n </p>";
+}
