@@ -1,25 +1,28 @@
 <?php
-$serverName = "127.0.0.1";
-$dBUsername = "root";
-$dBPassword = "";
-$dBName = "dbase";
-
-$conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
-
-if (!$conn) {
-	die("Connection failed: " . mysqli_connect_error());
-}
-
-class LoginTest extends \PHPUnit\Framework\TestCase{
+require_once "../includes/functions.inc.php";
+class LogINTest extends \PHPUnit\Framework\TestCase{
 	
-	public function testEmptyInputLogin(){
-		$sql = "SELECT * FROM users WHERE userUid = ? OR usersEmail = ?;";
- 		
+	public function testLogin(){
 		
-		   $user= 'hori';
-		   $password = 'hhh';
+ 		$user= 'hori';
+	        $password = 'hhh';
 		   
 	    $this->assertEquals('hori',$user);
 	    $this->assertEquals('hhh',$password);
 	}
+	
+	public function testEmptyInputLogin(){
+		
+	   $user= '';
+	   $password = ''; 	   
+    	   $this->assertEquals(true,emptyInputLogin($user, $password));
+	   
+           $user1='user';
+	   $password1='pass'; 
+	   $this->assertEquals(false,emptyInputLogin($user1, $password1));
+	}
+	
+	
+
+	
 }
