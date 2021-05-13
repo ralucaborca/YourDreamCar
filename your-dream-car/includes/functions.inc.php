@@ -173,16 +173,16 @@ function showCars($conn){
     exit();
   }
 
-function emptyQustionsAnswers($qustion1,$question2,$question3,$question4,$question5){
+/*function emptyInputFindCar($question1,$question2,$question3,$question4,$question5){
   $result;
-  if (empty($qustion1) || empty($qustion2) || empty($qustion3) || empty($qustion4) || empty($qustion5) ) {
+  if (empty($question1) || empty($question2) || empty($question3) || empty($question4) || empty($question5) ) {
     $result = true;
   }
   else{
     $result = false;
   }
   return $result;
-}
+}*/
 
 function questionsAnswers($question1,$question2,$question3,$question4,$question5){
 

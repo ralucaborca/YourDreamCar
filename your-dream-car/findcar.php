@@ -25,11 +25,11 @@
 	<p class=" text-light" style="background-color: #000000;"> <input type="radio" name="q5" value="fuel economy"/>fuel economy</p>
 	<p class=" text-light" style="background-color: #000000;"> <input type="radio" name="q5" value="performance"/> performance</p>
 	<br><button type='submit' name='submit'>Show Cars</button></br>
-	
+	<center><p class=" text-light" style="background-color: #000000;">Plase check one answer for all the questions!</p></center>
 	</form>
   <?php
   if (isset($_GET["error"])) {
-    if ($_GET["error"] == "emptyQuestionsAnswers") {
+    if ($_GET["error"] == "emptyFindCar") {
       echo "<center><h5 class='text-light'>Plase check one answer for all the questions!</h5></center>";
     }
   }
