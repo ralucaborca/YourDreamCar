@@ -1,33 +1,10 @@
 <?php
-$serverName = "127.0.0.1";
-$dBUsername = "root";
-$dBPassword = "";
-$dBName = "dbase";
-
-$conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
 
 require_once "../includes/functions.inc.php";
 
-if (!$conn) {
-	die("Connection failed: " . mysqli_connect_error());
-}
+
 
 class SignUPTest extends \PHPUnit\Framework\TestCase{
-	
-	public function testsignup(){
- 		
-		 $name='x';
-		 $email='x@gmail.com';
-		 $username='x';
-		 $password = 'hhh';
-		 $password2='hhh';
-	
-	    $this->assertEquals('x',$name);
-	    $this->assertEquals('x@gmail.com',$email); 
-	    $this->assertEquals('x',$username);
-	    $this->assertEquals('hhh',$password);
-	    $this->assertEquals('hhh',$password2);
-	}
 	
 	public function testPwdMatch(){
 		$pwd='pass';
@@ -36,5 +13,21 @@ class SignUPTest extends \PHPUnit\Framework\TestCase{
 		$this->assertEquals(false,pwdMatch($pwd,$pwd1));
 		$this->assertEquals(true,pwdMatch($pwd,$pwd2));
 }
+	
+	public function testInvalidEMail(){
+		$correct_email='name@mail.com';
+		$wrong_email='OhNo.org';
+
+		$this->assertEquals(false,invalidEMail($correct_email));
+		$this->assertEquals(true,invalidEMail($wrong_email));
+	}
+
+	public function testInvalidUid(){
+		$correct_uid='User123';
+		$wrong_uid='_WRONG_';
+
+		$this->assertEquals(false,invalidUid($correct_uid));
+		$this->assertEquals(true,invalidUid($wrong_uid));
+	}
 
 }
