@@ -14,7 +14,8 @@
     <br><center><input class="text-light" type="file" name="picture"></input></center></br>
 
 
-   <button type='submit' name='submit'>Add Car</button>
+   <br><button type='submit' name='submit'>Add Car</button></br>
+	<br><center><img src='images/caradder.jpeg'></center></br>
 	</form>
   <?php
   if (isset($_GET["error"])) {
