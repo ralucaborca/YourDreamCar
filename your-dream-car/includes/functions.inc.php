@@ -173,29 +173,31 @@ function showCars($conn){
     exit();
   }
 
-/*function emptyInputFindCar($question1,$question2,$question3,$question4,$question5){
+function emptyInputFindCar($question1,$question2,$question3,$question4,$question5,$question6){
   $result;
-  if (empty($question1) || empty($question2) || empty($question3) || empty($question4) || empty($question5) ) {
+  if (empty($question1) || empty($question2) || empty($question3) || empty($question4) || empty($question5) || empty($question6) ) {
     $result = true;
   }
   else{
     $result = false;
   }
   return $result;
-}*/
+}
 
-function questionsAnswers($question1,$question2,$question3,$question4,$question5){
+function questionsAnswers($question1,$question2,$question3,$question4,$question5,$question6){
 
   $result=0;
-  if($question1 == "5000-10000") 
+  if($question1 == "<18")
+ { header("location: ../findcar.php?error=<18");}
+  if($question2 == "5000-15000") 
  { $result++;}
-  if($question2 == "2") 
+  if($question3 == "2") 
  { $result++;}
-  if($question3 == "10000-15000") 
+  if($question4 == "10000-15000") 
  { $result++;}
-  if($question4 == "no") 
+  if($question5 == "no") 
  { $result++;}
-  if($question5 == "performance") 
+  if($question6 == "performance") 
  { $result++;}
   echo "<p>The answer is:" . $result . "<br />\n </p>";
 }

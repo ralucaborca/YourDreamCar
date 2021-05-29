@@ -10,7 +10,6 @@
     <p class="lead text-center text-light" style="background-color: #000000;">Email: yourdreamcar@gmail.com</p>
     <p class="lead text-center text-light" style="background-color: #000000;">Phone: 05672871901</p>
     
-    
     <div class="text-center"></div>
     <div></div>
     <div></div>
